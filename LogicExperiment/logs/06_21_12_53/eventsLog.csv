@@ -1,0 +1,38 @@
+#Starting log sesion 12:53:48:418
+%Timestamp;eventsData
+12:53:48:422;Experiment Started;
+12:53:50:126;1;typeD;umbrella;4;0;
+12:53:54:800;SetupFinished;
+12:53:54:800;occluderUp;
+12:53:56:803;movingContainer;
+12:53:58:314;objGrabbed;1;stim_right;
+12:53:59:343;RightGrabbed;
+12:54:01:013;Repositioning
+12:54:05:524;EndAppear;0;12:54:05:524;
+12:54:08:035;AskingSortingQuestion
+12:54:11:723;answerGood
+12:54:13:375;2;typeC;ball;0;1;
+12:54:18:040;SetupFinished;
+12:54:18:041;occluderUp;
+12:54:19:049;movingContainer;
+12:54:20:556;objGrabbed;0;stim_left;
+12:54:21:586;LeftGrabbed;
+12:54:23:257;InferenceStarting
+12:54:23:257;occluderDown;
+12:54:26:264;RunFromScr;
+12:54:27:182;After_RunFromScr;;0;
+12:54:27:193;InferenceEnding
+12:54:27:193;OutcomeStarting
+12:54:29:196;OutcomeEnding
+12:54:29:196;AskingSortingQuestion
+12:54:31:974;answerGood
+12:54:33:480;3;typeD;snake;0;1;
+12:54:38:185;SetupFinished;
+12:54:38:186;occluderUp;
+12:54:40:191;movingContainer;
+12:54:41:694;objGrabbed;1;stim_right;
+12:54:42:712;RightGrabbed;
+12:54:44:399;Repositioning
+12:54:48:915;EndAppear;1;12:54:48:915;
+12:54:51:423;AskingSortingQuestion
+closing session;120147

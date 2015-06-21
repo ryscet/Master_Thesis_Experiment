@@ -1,0 +1,18 @@
+#Starting log sesion 12:59:52:548
+%Timestamp;eventsData
+12:59:52:552;Experiment Started;
+12:59:53:217;1;typeC;bearSprite;4;0;
+12:59:57:844;SetupFinished;
+12:59:57:845;occluderUp;
+12:59:58:845;movingContainer;
+01:00:00:348;objGrabbed;0;stim_left;
+01:00:01:366;LeftGrabbed;
+01:00:03:069;InferenceStarting
+01:00:03:069;occluderDown;
+01:00:06:078;RunFromScr;
+01:00:07:012;After_RunFromScr;;1;
+01:00:07:014;InferenceEnding
+01:00:07:014;OutcomeStarting
+01:00:09:025;OutcomeEnding
+01:00:09:025;AskingSortingQuestion
+closing session;17778

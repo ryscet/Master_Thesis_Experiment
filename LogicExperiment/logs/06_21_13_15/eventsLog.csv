@@ -1,0 +1,34 @@
+#Starting log sesion 01:15:25:041
+%Timestamp;eventsData
+01:15:25:045;Experiment Started;
+01:15:26:319;1;typeB;bearSprite;4;1;
+01:15:31:045;SetupFinished;
+01:15:31:046;occluderUp;
+01:15:32:048;movingContainer;
+01:15:33:552;objGrabbed;0;stim_left;
+01:15:34:570;LeftGrabbed;
+01:15:36:257;InferenceStarting
+01:15:36:257;Repositioning
+01:15:38:763;InferenceEnding
+01:15:40:266;2;typeA;boy;2;1;
+01:15:40:766;OutcomeStarting
+01:15:40:767;EndAppear;0;01:15:40:767;
+01:15:44:289;OutcomeEnding
+01:15:44:290;AskingSortingQuestion
+01:15:44:927;SetupFinished;
+01:15:44:927;movingContainer;
+01:15:46:428;answerGood
+01:15:46:429;objGrabbed;1;stim_right;
+01:15:47:446;RightGrabbed;
+01:15:47:932;3;typeI1;umbrella;4;1;
+01:15:52:606;SetupFinished;
+01:15:52:606;occluderUp;
+01:15:53:611;movingContainer;
+01:15:55:238;objGrabbed;1;stim_right;
+01:15:56:386;RightGrabbed;
+01:15:58:054;occluderUp;
+01:15:58:055;InterruptionQuestion
+01:15:59:054;Repositioning
+01:16:03:610;EndAppear;0;01:16:03:610;
+01:16:07:136;AskingSortingQuestion
+closing session;59534

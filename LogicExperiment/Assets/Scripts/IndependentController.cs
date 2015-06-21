@@ -24,7 +24,7 @@ public class IndependentController : MonoBehaviour {
 
 	public IEnumerator endShow(GameObject stim, List<int> outcomes){  
 //Pseudo Randomly select if the object showing from behind the occluder is the possible or impossible one
-		Debug.Log("Outcomes length: "+ outcomes.Count);
+	//	Debug.Log("Outcomes length: "+ outcomes.Count);
 		int idx = UnityEngine.Random.Range(0,outcomes.Count);
 		int possible = outcomes[idx];
 		outcomes.RemoveAt(idx);

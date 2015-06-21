@@ -26,6 +26,8 @@ public class OccluderController : MonoBehaviour {
 	}	
 
 	public float topDown(){
+		animator.SetTrigger("playTopDown");
+
 		//experimentController.msg += "occluderDown;"+ DateTime.Now.ToString("hh:mm:ss:fff",CultureInfo.InvariantCulture) + ";";
 		experimentController.eventsLog.LogMessage("occluderDown;");
 		experimentController.msg = "occluderDown;";

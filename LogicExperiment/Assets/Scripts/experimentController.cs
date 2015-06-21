@@ -12,7 +12,8 @@ public enum trialType
 	typeD = 3,
 	typeI1 = 4,
 	typeI2 = 5,
-	typeI3 = 6
+	typeI3 = 6,
+	typeI4= 7
 }
 
 
@@ -78,7 +79,7 @@ public class experimentController : MonoBehaviour {
 
 	private void myMain(){
 		trialCounter++;
-		Debug.Log("length: " +trialCounter.ToString() + " " + setup.globalTrials.Count.ToString());
+		//Debug.Log("length: " +trialCounter.ToString() + " " + setup.globalTrials.Count.ToString());
 	
 		msg = trialCounter + ";";
 		int idx = UnityEngine.Random.Range(0,setup.globalTrials.Count);
@@ -166,7 +167,7 @@ public class experimentController : MonoBehaviour {
 
 		chooseTrialType();
 	}
-
+//Ask a question about container content after the different-top stimulus was grabbed
 	IEnumerator runTrial_I1(){
 		curTrial = trialType.typeI1;
 		yield return StartCoroutine (setup.createStimuli(setup.stimuliShuffle_I1, setup.unpairedStimuli));
@@ -177,7 +178,7 @@ public class experimentController : MonoBehaviour {
 		chooseTrialType();
 	}
 
-//CHECK HOW IT i supposed
+//Ask a question about container content after the same-top stimulus was grabbed and the other one was revealed
 	IEnumerator runTrial_I2(){
 		curTrial = trialType.typeI2;
 		yield return StartCoroutine (setup.createStimuli(setup.stimuliShuffle_I2, setup.pairedStimuli));
@@ -187,7 +188,7 @@ public class experimentController : MonoBehaviour {
 		yield return StartCoroutine(guiCtrl.interruptTrial());
 		chooseTrialType();
 	}
-
+//Ask a question about container content wehn it is impossible to know
 	IEnumerator runTrial_I3(){
 		curTrial = trialType.typeI3;
 		yield return StartCoroutine (setup.createStimuli(setup.stimuliShuffle_I3, setup.pairedStimuli));
@@ -197,14 +198,15 @@ public class experimentController : MonoBehaviour {
 		chooseTrialType();
 	}
 
-//	IEnumerator runTrial_I4(){
-//		curTrial = trialType.typeI4;
-//		yield return StartCoroutine (setup.createStimuli(setup.stimuliShuffle_I4, setup.pairedStimuli));
-//		yield return new WaitForSeconds (occluder.twoStepUp());
-//		yield return StartCoroutine(container.middleMoveContainer());
-//		yield return StartCoroutine(guiCtrl.interruptTrial());
-//		chooseTrialType();
-//	}
+	IEnumerator runTrial_I4(){
+		curTrial = trialType.typeI4;
+		yield return StartCoroutine (setup.createStimuli(setup.stimuliShuffle_I1, setup.unpairedStimuli));
+		yield return new WaitForSeconds (occluder.twoStepUp());
+		yield return StartCoroutine(container.middleMoveContainer());
+		yield return StartCoroutine(indCtrl.shiftStim(GameObject.FindGameObjectWithTag("outside")));
+		yield return StartCoroutine(guiCtrl.interruptTrial());
+		chooseTrialType();
+	}
 		
 
 	void chooseTrialType(){

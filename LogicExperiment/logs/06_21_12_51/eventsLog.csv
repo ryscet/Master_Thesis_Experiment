@@ -1,0 +1,18 @@
+#Starting log sesion 12:51:13:652
+%Timestamp;eventsData
+12:51:13:656;Experiment Started;
+12:51:14:467;1;typeC;ball;0;0;
+12:51:19:116;SetupFinished;
+12:51:19:117;occluderUp;
+12:51:20:127;movingContainer;
+12:51:21:630;objGrabbed;1;stim_right;
+12:51:22:647;RightGrabbed;
+12:51:24:336;InferenceStarting
+12:51:24:336;occluderDown;
+12:51:27:351;RunFromScr;
+12:51:28:258;After_RunFromScr;;0;
+12:51:28:263;InferenceEnding
+12:51:28:263;OutcomeStarting
+12:51:30:273;OutcomeEnding
+12:51:30:273;AskingSortingQuestion
+closing session;19211

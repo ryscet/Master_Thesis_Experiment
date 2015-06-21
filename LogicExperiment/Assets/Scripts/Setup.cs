@@ -9,7 +9,7 @@ public class Setup : MonoBehaviour {
 	public static int pairs = 3;
 	public static int conditions = 4;
 	public static int pairRepetitions = 2;
-	public static int questionTrials = 3;
+	public static int questionTrials = 4;
 
 
 	public GameObject[] currStim = new GameObject[2];
@@ -38,6 +38,7 @@ public class Setup : MonoBehaviour {
 	public List<int> stimuliShuffle_I1 = new List<int>(){};
 	public List<int> stimuliShuffle_I2= new List<int>(){};
 	public List<int> stimuliShuffle_I3= new List<int>(){};
+	public List<int> stimuliShuffle_I4= new List<int>(){};
 
 	public List<int> leftRightShuffle = new List<int>(){};
 	AudioSource audio;
@@ -207,6 +208,10 @@ int zeroToone(int x){
 		stimuliShuffle_I3.Add(0);
 		stimuliShuffle_I3.Add(2);
 		stimuliShuffle_I3.Add(4);
+
+		stimuliShuffle_I4.Add(0);
+		stimuliShuffle_I4.Add(2);
+		stimuliShuffle_I4.Add(4);
 
 		for(int w = 0; w < 3; w++){
 			
