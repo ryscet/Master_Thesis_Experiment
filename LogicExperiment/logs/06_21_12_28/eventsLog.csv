@@ -1,0 +1,13 @@
+#Starting log sesion 12:28:02:600
+%Timestamp;eventsData
+12:28:02:605;Experiment Started;
+12:28:04:069;1;typeD;startStimuli;2;1;
+12:28:08:669;SetupFinished;
+12:28:08:670;occluderUp;
+12:28:10:672;movingContainer;
+12:28:12:194;objGrabbed;0;stim_left;
+12:28:18:516;LeftGrabbed;
+12:28:20:218;Repositioning
+12:28:24:730;EndAppear;1;12:28:24:730;
+12:28:27:233;AskingSortingQuestion
+closing session;31644
