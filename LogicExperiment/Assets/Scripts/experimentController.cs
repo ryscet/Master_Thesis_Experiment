@@ -59,12 +59,8 @@ public class experimentController : MonoBehaviour {
 
 	void Update () {
 
-		if(Input.GetKeyUp("1")){ 
+		if(Input.GetKeyUp(KeyCode.Space)){ 
 			myMain();
-		}
-
-		if(Input.GetKeyUp("2")){ 
-			Application.LoadLevel(Application.loadedLevel);
 		}
 
 
@@ -96,6 +92,10 @@ public class experimentController : MonoBehaviour {
 			//Application.LoadLevel("block_2");
 			block_idx += 1;
 			Application.LoadLevel(Application.loadedLevel);
+		}
+		if(block_idx > 2){
+			guiCtrl.EndScreen = true;
+			//Application.Quit();
 		}
 	}
 	
