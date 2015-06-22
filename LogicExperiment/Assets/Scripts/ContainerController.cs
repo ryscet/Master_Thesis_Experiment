@@ -15,7 +15,7 @@ public class ContainerController : MonoBehaviour {
 	List<string> objToGrabList = new List<string>{ "catchLeft", "catchRight"};
 	List<string> tags = new List<string>(){"stim_left", "stim_right"};
 	List<int> myLeftRight;
-	List<trialType> dissapearTrials = new List<trialType>(){trialType.typeB, trialType.typeC, trialType.typeD, trialType.typeI1, trialType.typeI2,  trialType.typeI3, trialType.typeI4};
+	List<trialType> dissapearTrials = new List<trialType>(){trialType.typeB, trialType.typeC, trialType.typeD, trialType.typeI1, trialType.typeI2,  trialType.typeI3};
 	string containerMsg;
 	public AudioClip collect;
 	AudioSource audio;
