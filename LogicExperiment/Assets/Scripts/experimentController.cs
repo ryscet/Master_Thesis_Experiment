@@ -107,7 +107,7 @@ public class experimentController : MonoBehaviour {
 
 		yield return StartCoroutine (setup.createStimuli(setup.stimuliShuffle_A, setup.pairedStimuli));
 		yield return StartCoroutine(container.middleMoveContainer());
-		yield return new WaitForSeconds (occluder.twoStepUp());
+		yield return new WaitForSeconds (occluder.twoStepUp() + 1.0F);
 		yield return StartCoroutine(indCtrl.shiftStim(GameObject.FindGameObjectWithTag("outside")));
 		yield return new WaitForSeconds(betweenShiftDelay);
 		yield return StartCoroutine(indCtrl.endShow(GameObject.FindGameObjectWithTag("outside"), setup.outcomes[curTrial.ToString()]));
@@ -120,7 +120,7 @@ public class experimentController : MonoBehaviour {
 		curTrial = trialType.typeB;
 
 		yield return StartCoroutine (setup.createStimuli(setup.stimuliShuffle_B, setup.pairedStimuli));
-		yield return new WaitForSeconds (occluder.twoStepUp());
+		yield return new WaitForSeconds (occluder.twoStepUp() + 1.0f);
 		yield return StartCoroutine(container.middleMoveContainer());
 			eventsLog.LogMessage("InferenceStarting");
 		yield return StartCoroutine(indCtrl.shiftStim(GameObject.FindGameObjectWithTag("outside")));
@@ -138,7 +138,7 @@ public class experimentController : MonoBehaviour {
 	IEnumerator runTrial_C(){
 		curTrial = trialType.typeC;
 		yield return StartCoroutine (setup.createStimuli(setup.stimuliShuffle_C, setup.pairedStimuli));
-		yield return new WaitForSeconds (occluder.twoStepUp());
+		yield return new WaitForSeconds (occluder.twoStepUp() + 1.0f);
 		yield return StartCoroutine(container.middleMoveContainer());
 			eventsLog.LogMessage("InferenceStarting");
 		yield return new WaitForSeconds (occluder.topDown() + 1.0f);
@@ -200,7 +200,7 @@ public class experimentController : MonoBehaviour {
 
 	IEnumerator runTrial_I4(){
 		curTrial = trialType.typeI4;
-		yield return StartCoroutine (setup.createStimuli(setup.stimuliShuffle_I1, setup.unpairedStimuli));
+		yield return StartCoroutine (setup.createStimuli(setup.stimuliShuffle_I4, setup.unpairedStimuli));
 		yield return new WaitForSeconds (occluder.twoStepUp());
 		yield return StartCoroutine(container.middleMoveContainer());
 		yield return StartCoroutine(indCtrl.shiftStim(GameObject.FindGameObjectWithTag("outside")));

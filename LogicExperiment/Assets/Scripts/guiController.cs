@@ -29,6 +29,9 @@ public class guiController : MonoBehaviour {
 	public AudioClip click;
 	AudioSource audio;
 
+	string[] buttons = new string[3] {"Start", "Options", "Exit"};
+	int selected = 0;
+
 	void Start(){
 		boxPos = new Vector2[2]{new Vector2(Screen.width/2 - buttonSize/2,Screen.height/2.75F), new Vector2(Screen.width/2 - buttonSize/2, Screen.height/2.75F + buttonSize + buttonDitance)};
 		setup = GameObject.Find("Main Camera").GetComponent("Setup") as Setup;
@@ -77,7 +80,7 @@ public class guiController : MonoBehaviour {
 				audio.PlayOneShot(click, 1.0F);
 			}
 
-			if(experimentController.curTrial != trialType.typeI3 && experimentController.curTrial != trialType.typeI1){
+			if(experimentController.curTrial != trialType.typeI4 && experimentController.curTrial != trialType.typeI1){
 				if (GUI.Button(  new Rect(boxPos[1].x, boxPos[1].y + buttonSize + buttonDitance ,buttonSize,buttonSize), cannotQuestion[setup.s1.pairId])){
 					showGUI = false;
 					//experimentController.msg += "2" + ";"+ DateTime.Now.ToString("hh:mm:ss:fff",CultureInfo.InvariantCulture) + ";";
@@ -106,7 +109,7 @@ public class guiController : MonoBehaviour {
 			
 			// Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
 			GUI.Box(new Rect(Screen.width/2 - questionBoxSize/2, Screen.height / 20,questionBoxSize,questionBoxSize/8), "Was the movie good or bad?");
-			
+			GUI.SetNextControlName(buttons[2]);
 			if (GUI.Button( new Rect(Screen.width/4 - buttonSize,Screen.height/2,buttonSize*2,buttonSize*2), up)){
 				//experimentController.msg += "ans1;"+ DateTime.Now.ToString("hh:mm:ss:fff",CultureInfo.InvariantCulture) + ";";
 				experimentController.eventsLog.LogMessage( "answerGood");

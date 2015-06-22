@@ -218,6 +218,7 @@ int zeroToone(int x){
 			globalTrials.Add("runTrial_I1");
 			globalTrials.Add("runTrial_I2");
 			globalTrials.Add("runTrial_I3");
+			globalTrials.Add("runTrial_I4");
 		}
 
 }
