@@ -2,10 +2,8 @@
 -target:library
 -nowarn:0169
 -out:'Temp/Assembly-CSharp.dll'
--r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll'
+-r:'/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/Managed/UnityEngine.dll'
 -r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll'
--r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll'
--r:'/Applications/Unity/Unity.app/Contents/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll'
 -define:UNITY_5_0_0
 -define:UNITY_5_0
 -define:UNITY_5
@@ -51,10 +49,6 @@
 -define:ENABLE_MOVIES
 -define:ENABLE_NETWORK
 -define:ENABLE_MONO
--define:ENABLE_PROFILER
--define:UNITY_EDITOR
--define:UNITY_EDITOR_64
--define:UNITY_EDITOR_OSX
 'Assets/Scripts/ContainerController.cs'
 'Assets/Scripts/IndependentController.cs'
 'Assets/Scripts/LogMsg.cs'
@@ -66,5 +60,5 @@
 'Assets/Scripts/old scripts/BackgroundRepeater.cs'
 'Assets/Scripts/old scripts/Client.cs'
 'Assets/Scripts/stimuliController.cs'
--r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
--r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Xml.Linq.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/2.0/System.Runtime.Serialization.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/2.0/System.Xml.Linq.dll'
