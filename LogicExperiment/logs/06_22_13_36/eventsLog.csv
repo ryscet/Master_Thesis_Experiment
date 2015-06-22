@@ -1,9 +1,0 @@
-#Starting log sesion 01:36:31:320
-%Timestamp;eventsData
-01:36:31:349;Experiment Started;
-01:36:32:075;1;typeB;ball;0;1;
-01:36:36:728;SetupFinished;
-01:36:36:729;occluderUp;
-01:36:38:733;movingContainer;
-01:36:40:240;objGrabbed;0;stim_left;
-closing session;9233

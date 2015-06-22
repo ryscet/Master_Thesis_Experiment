@@ -20,7 +20,7 @@ public class guiController : MonoBehaviour {
 	Setup setup;
 	float buttonSize = Screen.width / 10; 
 	float buttonDitance = Screen.height / 25;
-	float questionBoxSize = Screen.width / 2;
+	float questionBoxSize = Screen.width / 3;
 	Vector2[] boxPos;
 	Vector2 pos_a, pos_b;
 	public Texture2D[] cannotQuestion;
@@ -29,65 +29,14 @@ public class guiController : MonoBehaviour {
 	public AudioClip click;
 	AudioSource audio;
 
-	public Texture2D[] twoButtons = new Texture2D[2];
-	string[] buttons = new string[3] {"Start", "Options", "Exit"};
-	int selected = 0;
-	public bool PauseScreen = true;
-	public bool  EndScreen = false;
 	void Start(){
 		boxPos = new Vector2[2]{new Vector2(Screen.width/2 - buttonSize/2,Screen.height/2.75F), new Vector2(Screen.width/2 - buttonSize/2, Screen.height/2.75F + buttonSize + buttonDitance)};
 		setup = GameObject.Find("Main Camera").GetComponent("Setup") as Setup;
 		audio = GetComponent<AudioSource>();
-
-		selected = 0;
-
-		twoButtons[0] = up;
-		twoButtons[1] = down;
-	}
-
-
-
-	void Update(){
-
-
-		if(Input.GetKeyDown(KeyCode.Alpha4)){
-			
-			//selected = menuSelection(buttons, selected, "up");
-			selected = 0;
-
-		}
-		
-		if(Input.GetKeyDown(KeyCode.Alpha5)){
-			
-			//selected = menuSelection(buttons, selected, "down");
-			selected = 1;
-
-		}
-
-		if(Input.GetKeyDown(KeyCode.Space)){
-			PauseScreen = false;
-			
-		}
-
-
-
 	}
 
 	void OnGUI(){
 		Cursor.visible = false;
-
-		GUI.skin.box.fontSize = 32;
-
-		if(EndScreen){
-			GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height), pauseBckg);
-			GUI.Box(new Rect(Screen.width/2 - questionBoxSize/2, Screen.height / 3,questionBoxSize,questionBoxSize/8), "\nThank you for your participation!");
-		}
-
-
-		if(PauseScreen){
-			GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height), pauseBckg);
-			GUI.Box(new Rect(Screen.width/2 - questionBoxSize/2, Screen.height / 3,questionBoxSize,questionBoxSize/8), "\nPlease press space when ready");
-		}
 
 		if(showGUI){
 			Cursor.visible = true;
@@ -99,7 +48,7 @@ public class guiController : MonoBehaviour {
 			//GUI.DrawTexture(new Rect(Screen.width/2 -50,75, 100, 100), contQuestion, ScaleMode.ScaleToFit);
 
 			// Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
-			GUI.Box(new Rect(Screen.width/2 - questionBoxSize/2, Screen.height / 20,questionBoxSize,questionBoxSize/8), "\nWhat is in the container?");
+			GUI.Box(new Rect(Screen.width/2 - questionBoxSize/2, Screen.height / 20,questionBoxSize,questionBoxSize/8), "What is in the container?");
 
 
 			if (GUI.Button(  new Rect(boxPos[0].x, boxPos[0].y - buttonSize - buttonDitance,buttonSize,buttonSize), contQuestion)){
@@ -128,7 +77,7 @@ public class guiController : MonoBehaviour {
 				audio.PlayOneShot(click, 1.0F);
 			}
 
-			if(experimentController.curTrial != trialType.typeI4 && experimentController.curTrial != trialType.typeI1){
+			if(experimentController.curTrial != trialType.typeI3 && experimentController.curTrial != trialType.typeI1){
 				if (GUI.Button(  new Rect(boxPos[1].x, boxPos[1].y + buttonSize + buttonDitance ,buttonSize,buttonSize), cannotQuestion[setup.s1.pairId])){
 					showGUI = false;
 					//experimentController.msg += "2" + ";"+ DateTime.Now.ToString("hh:mm:ss:fff",CultureInfo.InvariantCulture) + ";";
@@ -156,29 +105,23 @@ public class guiController : MonoBehaviour {
 			GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height), pauseBckg);
 			
 			// Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
-			GUI.Box(new Rect(Screen.width/2 - questionBoxSize/2, Screen.height / 20,questionBoxSize,questionBoxSize/8), "\nWas the movie good or bad?");
-
-
-			//GUI.SetNextControlName(twoButtons[0]);
-			if (GUI.Button( new Rect(Screen.width/4 - buttonSize,Screen.height/2,buttonSize*2,buttonSize*2), twoButtons[0]) || Input.GetKeyDown(KeyCode.LeftArrow)){
+			GUI.Box(new Rect(Screen.width/2 - questionBoxSize/2, Screen.height / 20,questionBoxSize,questionBoxSize/8), "Was the movie good or bad?");
+			
+			if (GUI.Button( new Rect(Screen.width/4 - buttonSize,Screen.height/2,buttonSize*2,buttonSize*2), up)){
 				//experimentController.msg += "ans1;"+ DateTime.Now.ToString("hh:mm:ss:fff",CultureInfo.InvariantCulture) + ";";
 				experimentController.eventsLog.LogMessage( "answerGood");
 				sortQuestionShow= false;
 				showGuiITI= true;
 				audio.PlayOneShot(click, 1.0F);
 			}
-
-
-			//GUI.SetNextControlName(twoButtons[1]);
-			if (GUI.Button( new Rect(Screen.width/2 + Screen.width/4- buttonSize,Screen.height/2,buttonSize*2,buttonSize*2), twoButtons[1]) || Input.GetKeyDown(KeyCode.RightArrow)){
+			
+			if (GUI.Button( new Rect(Screen.width/2 + Screen.width/4- buttonSize,Screen.height/2,buttonSize*2,buttonSize*2), down)){
 				//experimentController.msg += "ans2;"+ DateTime.Now.ToString("hh:mm:ss:fff",CultureInfo.InvariantCulture) + ";";
 				experimentController.eventsLog.LogMessage( "answerBad");
 				sortQuestionShow= false;
 				showGuiITI= true;
 				audio.PlayOneShot(click, 1.0F);
 			}
-
-			GUI.FocusControl(buttons[selected]);
 		}
 
 		if(showGuiITI){
@@ -238,51 +181,5 @@ public class guiController : MonoBehaviour {
 			return 100;
 		}
 	}
-
-
-//	int menuSelection (string[] buttonsArray, int selectedItem, string direction) {
-//		
-//		if (direction == "up") {
-//			
-//			if (selectedItem == 0) {
-//				
-//				selectedItem = buttonsArray.Length - 1;
-//				
-//			} else {
-//				
-//				selectedItem -= 1;
-//				
-//			}
-//			
-//		}
-//		
-//		if (direction == "down") {
-//			
-//			if (selectedItem == buttonsArray.Length - 1) {
-//				
-//				selectedItem = 0;
-//				
-//			} else {
-//				
-//				selectedItem += 1;
-//				
-//			}
-//			
-//		}
-//		
-//		return selectedItem;
-//		
-//	}
-
-
-
-
-
-
-
-
-
-
-
 
 }

@@ -15,7 +15,7 @@ public class ContainerController : MonoBehaviour {
 	List<string> objToGrabList = new List<string>{ "catchLeft", "catchRight"};
 	List<string> tags = new List<string>(){"stim_left", "stim_right"};
 	List<int> myLeftRight;
-	List<trialType> dissapearTrials = new List<trialType>(){trialType.typeB, trialType.typeC, trialType.typeD, trialType.typeI1, trialType.typeI2,  trialType.typeI3};
+	List<trialType> dissapearTrials = new List<trialType>(){trialType.typeB, trialType.typeC, trialType.typeD, trialType.typeI2};
 	string containerMsg;
 	public AudioClip collect;
 	AudioSource audio;
@@ -45,7 +45,7 @@ public class ContainerController : MonoBehaviour {
 			yield return null;
 		}
 
-		yield return new WaitForSeconds(1.25f);
+		yield return new WaitForSeconds(0.5f);
 	}
 //TODO Pseudo randomize this
 //This function is repeating (catch left and right very simmilar becaue the animation is different for left and right...)
