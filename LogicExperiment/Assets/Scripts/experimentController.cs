@@ -64,8 +64,7 @@ public class experimentController : MonoBehaviour {
 		}
 
 
-		streamLog.LogMessage(msg);
-
+		streamLog.LogMessage(msg + ";" + Input.mousePosition.x.ToString() + ";" + Input.mousePosition.y.ToString());
 
 		if(Input.GetKeyUp(KeyCode.Escape)){
 			Application.Quit();
@@ -76,7 +75,7 @@ public class experimentController : MonoBehaviour {
 	private void myMain(){
 		trialCounter++;
 		//Debug.Log("length: " +trialCounter.ToString() + " " + setup.globalTrials.Count.ToString());
-	
+		Debug.Log(trialCounter.ToString() + "  " + block_idx.ToString());
 		msg = trialCounter + ";";
 		int idx = UnityEngine.Random.Range(0,setup.globalTrials.Count);
 		if(setup.globalTrials.Count > 0){
@@ -93,7 +92,7 @@ public class experimentController : MonoBehaviour {
 			block_idx += 1;
 			Application.LoadLevel(Application.loadedLevel);
 		}
-		if(block_idx > 2){
+		if(block_idx > 1){
 			guiCtrl.EndScreen = true;
 			//Application.Quit();
 		}

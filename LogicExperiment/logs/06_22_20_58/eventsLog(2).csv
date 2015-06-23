@@ -1,0 +1,21 @@
+#Starting log sesion 08:58:54:844
+%Timestamp;eventsData
+08:58:54:848;Experiment Started;
+08:58:57:350;1;typeI3;ball;0;1;
+08:59:02:029;SetupFinished;
+08:59:02:029;occluderUp;
+08:59:03:046;movingContainer;
+08:59:04:546;objGrabbed;0;stim_left;
+08:59:05:563;LeftGrabbed;
+08:59:07:998;InterruptionQuestion
+08:59:19:531;1;
+08:59:21:315;2;typeA;ball;0;1;
+08:59:25:481;SetupFinished;
+08:59:25:481;movingContainer;
+08:59:26:982;objGrabbed;1;stim_right;
+08:59:28:000;RightGrabbed;
+08:59:30:448;occluderUp;
+08:59:32:465;Repositioning
+08:59:36:966;EndAppear;0;08:59:36:966;
+08:59:40:482;AskingSortingQuestion
+closing session;56014

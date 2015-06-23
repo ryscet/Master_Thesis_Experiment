@@ -1,0 +1,9 @@
+#Starting log sesion 08:58:29:601
+%Timestamp;eventsData
+08:58:29:607;Experiment Started;
+08:58:33:403;1;typeC;boy;2;1;
+08:58:38:035;SetupFinished;
+08:58:38:035;occluderUp;
+08:58:40:123;movingContainer;
+08:58:41:741;objGrabbed;0;stim_left;
+closing session;13075
